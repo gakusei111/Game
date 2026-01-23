@@ -1,4 +1,4 @@
-public class Main {
+public final class Main {
     public static void main(String[] args) {
         // Create a Hero instance
         // Set the name and hp attributes
@@ -8,17 +8,15 @@ public class Main {
     System.out.println("勇者" + h.name + "を生み出しました！");
         // Create a Matango instance
         // Set the suffix attribute
-    Matango m1 = new Matango();
+    Matango m1 = new Matango('A');
     m1.hp = 50;
-    m1.suffix = 'A';
 
-    Matango m2 = new Matango();
+    Matango m2 = new Matango('B');
     m2.hp = 48;
-    m2.suffix = 'B';
-        // The Beginning of the Adventure
-        h.slip();
-        m1.run();
-        m2.run();
-        h.run();
+
+        //create PoisonMatango instance
+    PoisonMatango pm = new PoisonMatango('C');
+    pm.hp = 60;
+    pm.attack(h);
     }
 }
